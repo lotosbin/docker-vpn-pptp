@@ -2,6 +2,9 @@ FROM ubuntu:16.04
 MAINTAINER Przemek Szalko <przemek@mobtitude.com>
 
 ENV DEBIAN_FRONTEND noninteractive
+ENV PPTP_USER user
+ENV PPTP_PASS password
+
 RUN apt-get update && apt-get install -y pptpd iptables
 
 COPY ./etc/pptpd.conf /etc/pptpd.conf
